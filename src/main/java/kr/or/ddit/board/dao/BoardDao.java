@@ -1,30 +1,24 @@
-package kr.or.ddit.board.service;
+package kr.or.ddit.board.dao;
 
 import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.stereotype.Repository;
 
-import kr.or.ddit.board.dao.BoardDaoI;
 import kr.or.ddit.board.vo.CBoardVO;
 import kr.or.ddit.board.vo.UsersVO;
 
-@Transactional
-@Service("boardService")
-public class BoardService implements BoardServiceI{
-	
-	@Resource(name="boardDao")
-	private BoardDaoI boardDao;
-	
-	public BoardService() {
+@Repository("boardDao")
+public class BoardDao implements BoardDaoI{
 
-	}
+	@Resource(name="sqlSessionTemplate")
+	private SqlSessionTemplate sqlSession;
 
 	@Override
 	public UsersVO getUsers(String userId) {
-		return boardDao.getUsers(userId);
+		return sqlSession.selectOne("users.getUsers", userId);
 	}
 
 	@Override
