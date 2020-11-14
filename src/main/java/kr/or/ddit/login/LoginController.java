@@ -42,6 +42,7 @@ public class LoginController {
 		rangers.add("sally");
 		rangers.add("cony");
 		
+		
 		return rangers;
 	}
 	
