@@ -29,8 +29,7 @@ public class BoardService implements BoardServiceI{
 
 	@Override
 	public List<CBoardVO> selectAllCBoard() {
-		// TODO Auto-generated method stub
-		return null;
+		return boardDao.selectAllCBoard();
 	}
 
 	@Override

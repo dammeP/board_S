@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cboard">
+  <select id="selectAllCBoard" resultType="CBoardVO">
+    SELECT *
+    FROM CBoard
+  </select>
+  
+<!--   <select id="selectUseCBoard" resultType="CBoardVO"> -->
+<!--     SELECT * -->
+<!--     FROM CBoard -->
+<!--     WHERE cboardUseCheck = '0' -->
+<!--   </select> -->
+  
+<!--   <insert id="insertCBoard" parameterType="CBoardVO" > -->
+<!--   	INSERT INTO CBoard -->
+<!--   	(cboardUseCheck, cboardCategory, cboardNo, userId) -->
+<!--   	VALUES (#{cboardUseCheck}, #{cboardCategory},cboard_seq.nextVal,#{userId}) -->
+<!--   </insert> -->
+  
+<!--   <update id="updateCBoard" parameterType="CBoardVO"> -->
+<!--   	UPDATE CBoard -->
+<!--   	SET cboardUseCheck = #{cboardUseCheck} -->
+<!--   	WHERE cboardCategory = #{cboardCategory} -->
+<!--   </update> -->
+  
+</mapper>

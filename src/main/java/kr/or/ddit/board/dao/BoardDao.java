@@ -23,8 +23,7 @@ public class BoardDao implements BoardDaoI{
 
 	@Override
 	public List<CBoardVO> selectAllCBoard() {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectList("cboard.selectAllCBoard");
 	}
 
 	@Override
