@@ -18,5 +18,7 @@ public interface BoardDaoI {
 	
 	List<CBoardVO> selectUseCBoard();	// CBoard 사용가능한 리스트만 조회
 	
+//	List<BoardVO> selectPageBoard(PageVO pageVO);	// Board의 리스트를 페이지로 출력
 	
+	int insertCBoard(CBoardVO cboardVO);  // 게시판 생성
 }

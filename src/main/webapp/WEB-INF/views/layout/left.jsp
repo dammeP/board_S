@@ -6,10 +6,10 @@
 </script>
 
 <ul class="nav nav-sidebar">
-	<li class="active"><a href="${pageContext.request.contextPath }/CBoardInsert">게시판생성</a></li>
-	<c:forEach items="${cBoardList }" var="cBoardList">
-		<c:if test="${cBoardList.cboardUseCheck == '0' }">
-			<li class="active" id="category"><a href="${pageContext.request.contextPath }/boardList?cboardNo=${cBoardList.cboardNo}">${cBoardList.cboardCategory }</a></li>
+	<li class="active"><a href="${pageContext.request.contextPath }/cboard/insert">게시판생성</a></li>
+	<c:forEach items="${cboardList }" var="cboardList">
+		<c:if test="${cboardList.cboardUseCheck == '0' }">
+			<li class="active" id="category"><a href="${pageContext.request.contextPath }/board/category?cboardNo=${cboardList.cboardNo}">${cboardList.cboardCategory }</a></li>
 		</c:if> 
 	</c:forEach>
 </ul>

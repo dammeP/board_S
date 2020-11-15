@@ -8,17 +8,17 @@
     FROM CBoard
   </select>
   
-<!--   <select id="selectUseCBoard" resultType="CBoardVO"> -->
-<!--     SELECT * -->
-<!--     FROM CBoard -->
-<!--     WHERE cboardUseCheck = '0' -->
-<!--   </select> -->
+  <select id="selectUseCBoard" resultType="CBoardVO">
+    SELECT *
+    FROM CBoard
+    WHERE cboardUseCheck = '0'
+  </select>
   
-<!--   <insert id="insertCBoard" parameterType="CBoardVO" > -->
-<!--   	INSERT INTO CBoard -->
-<!--   	(cboardUseCheck, cboardCategory, cboardNo, userId) -->
-<!--   	VALUES (#{cboardUseCheck}, #{cboardCategory},cboard_seq.nextVal,#{userId}) -->
-<!--   </insert> -->
+  <insert id="insertCBoard" parameterType="CBoardVO" >
+  	INSERT INTO CBoard
+  	(cboardUseCheck, cboardCategory, cboardNo, userId)
+  	VALUES (#{cboardUseCheck}, #{cboardCategory},cboard_seq.nextVal,#{userId, jdbcType=VARCHAR})
+  </insert>
   
 <!--   <update id="updateCBoard" parameterType="CBoardVO"> -->
 <!--   	UPDATE CBoard -->
