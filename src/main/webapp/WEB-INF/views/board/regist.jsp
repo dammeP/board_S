@@ -51,31 +51,31 @@
 							<div class="form-group">
 								<label for="userid" class="col-sm-2 control-label">첨부파일</label>
 								<div class="col-sm-10">
-									  <input type="file" name="fileName1" />
+									  <input type="file" name="fileName" />
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="userid" class="col-sm-2 control-label">첨부파일</label>
 								<div class="col-sm-10">
-									  <input type="file" name="fileName2" />
+									  <input type="file" name="fileName" />
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="userid" class="col-sm-2 control-label">첨부파일</label>
 								<div class="col-sm-10">
-									  <input type="file" name="fileName3" />
+									  <input type="file" name="fileName" />
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="userid" class="col-sm-2 control-label">첨부파일</label>
 								<div class="col-sm-10">
-									  <input type="file" name="fileName4" />
+									  <input type="file" name="fileName" />
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="userid" class="col-sm-2 control-label">첨부파일</label>
 								<div class="col-sm-10">
-									  <input type="file" name="fileName5" />
+									  <input type="file" name="fileName" />
 								</div>
 							</div>
 							

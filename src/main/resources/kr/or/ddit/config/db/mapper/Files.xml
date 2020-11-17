@@ -17,14 +17,14 @@
   	 WHERE boardNo = #{boardNo} 
   </select>
   
-<!--   <delete id="deleteFiles" parameterType="String"> -->
-<!--   	DELETE FROM files  -->
-<!--   	WHERE fileNo = #{fileNo} -->
-<!--   </delete> -->
+  <delete id="deleteFiles" parameterType="String">
+  	DELETE FROM files 
+  	WHERE fileNo = #{fileNo}
+  </delete>
   
-<!--   <select id="getFilesImg" parameterType="String" resultType="FilesVO"> -->
-<!--   	SELECT *  -->
-<!--   	  FROM files -->
-<!--   	 WHERE fileNo = #{fileNo}  -->
-<!--   </select> -->
+  <select id="getFilesImg" parameterType="String" resultType="FilesVO">
+  	SELECT * 
+  	  FROM files
+  	 WHERE fileNo = #{fileNo} 
+  </select>
 </mapper>

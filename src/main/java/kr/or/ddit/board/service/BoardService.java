@@ -108,6 +108,11 @@ public class BoardService implements BoardServiceI{
 	public int insertFiles(FilesVO filesVO) {
 		return boardDao.insertFiles(filesVO);
 	}
+
+	@Override
+	public int deleteFiles(String fileNo) {
+		return boardDao.deleteFiles(fileNo);
+	}
 	
 	
 	

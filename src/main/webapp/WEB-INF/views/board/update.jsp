@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>	
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -43,14 +44,14 @@
 </script>
 	
 		<div class="row">
-			<div class="col-sm-8 blog-main">
+			<div class="col-sm-10 blog-main">
 				<form id="frm" class="form-horizontal" role="form" action="${cp}/board/update?boardNo=${boardVO.boardNo}" method="POST" enctype="multipart/form-data">
 					<br>
 					<br>
 					<br>
 					<div class="form-group">
 						<label id="userid" for="userid" class="col-sm-2 control-label">제목</label>
-						<div class="col-sm-10">
+						<div class="col-sm-15">
 <!-- 							<label  class="form-control" >제목</label>	 -->
 							<input type="text" class="form-control" id="boardTitle" name="boardTitle" placeholder="제목" value="${boardVO.boardTitle}"/>	
 						
@@ -59,20 +60,20 @@
 					<br>
 					<br>
 					<br>
-					<div class="form-group">
+					<div>
 						<label id="userid" for="userid" class="col-sm-2 control-label">내용</label>
 						<div class="col-sm-10">
-						 <textarea id="summernote" name="boardContent" placeholder="내용" value="${boardVO.boardContent}">${boardVO.boardContent}</textarea>
+						 <textarea id="summernote" name="boardContent" placeholder="내용" value="${boardVO.boardContent}">${boardVO.boardContent}</textarea><br>
 						</div>
+						<br>
 					</div>
 					<br>
 					<br>
 					<br>
 					<div class="form-group">
 						<label id="files" for="files" >첨부파일<br>
-										<c:forEach items="${filesList }" var="filesList" varStatus="status">
-											<button id="delFBtn${status.count}" type="button" name="fileNo"  value="${filesList.fileNo}">${filesList.realFileNm } X</button>
-<%-- 											<button id="delFBtn${status.count}" type="button" name="fileNm"  value="${filesList.fileNm}">${filesList.realFileNm } X</button> --%>
+										<c:forEach items="${filesList }" var="file2" varStatus="status">
+											<button id="delFBtn${status.count}" type="button" name="fileNo" value="${file2.fileNo}">${file2.realFileNm} X</button>
 											<br>
 										</c:forEach>	
 										<div id="DelFileListId">
@@ -84,7 +85,7 @@
 									<div class="form-group">
 										<label for="userid" class="col-sm-2 control-label">첨부파일</label>
 										<div class="col-sm-10">
-											  <input type="file" name="fileName${i }"/>
+											  <input type="file" name="fileName"/>
 										</div>
 									</div>
 								</c:forEach>

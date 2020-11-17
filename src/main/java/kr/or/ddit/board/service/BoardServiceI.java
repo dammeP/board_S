@@ -43,4 +43,6 @@ public interface BoardServiceI {
 	
 	int insertFiles(FilesVO filesVO);	// 첨부파일 추가
 	
+	int deleteFiles(String fileNo);	// 첨부파일 삭제
+	
 }

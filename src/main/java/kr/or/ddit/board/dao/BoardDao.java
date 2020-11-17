@@ -95,6 +95,11 @@ public class BoardDao implements BoardDaoI{
 	public int insertFiles(FilesVO filesVO) {
 		return sqlSession.insert("files.insertFiles",filesVO);
 	}
+
+	@Override
+	public int deleteFiles(String fileNo) {
+		return sqlSession.delete("files.deleteFiles",fileNo);
+	}
 	
 	
 }

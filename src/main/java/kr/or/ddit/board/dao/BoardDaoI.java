@@ -41,4 +41,6 @@ public interface BoardDaoI {
 	int insertBoardPa(BoardVO boardVO); 	// 답글 생성
 	
 	int insertFiles(FilesVO filesVO);	// 첨부파일 추가
+	
+	int deleteFiles(String fileNo);	// 첨부파일 삭제
 }

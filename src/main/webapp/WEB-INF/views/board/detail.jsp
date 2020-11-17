@@ -56,27 +56,27 @@ $(function(){
 				<div class="form-group">
 					<label id="userid" for="userid" >첨부파일</label>
 					<div>
-						<form action="${cp}/board/fileDown?boardNo=${boardVO.boardNo}" method="GET" enctype="multipart/form-data">
+<%-- 						<form action="${cp}/board/fileDown?fileNo=${file.fileNo}"> --%>
 								<c:forEach items="${filesList}" var="file">
 									<div>
-									<button id="profileDownBtn"  type="submit" class="btn btn-default">다운로드 : ${file.realFileNm }</button>
+<%-- 									<button id="profileDownBtn"  type="submit" class="btn btn-default">다운로드 : ${file.realFileNm }</button> --%>
+									<button id="profileDownBtn"  type="button" class="btn btn-default"><a href="${cp}/board/fileDown?fileNo=${file.fileNo}">다운로드 : ${file.realFileNm }</a></button>
 									</div>
 								</c:forEach>	
-						</form>
+<!-- 						</form> -->
 					</div>
 				</div>
 				<div>
 					<div class="col-sm-offset-6 col-sm-10">
-<%-- 						<form action="${cp }/board/update?boardNo=${boardVO.boardNo}&&cboardNo=${boardVO.CBoardNo}" method="GET" enctype="multipart/form-data" > --%>
-							<button name="upBtn" type="submit" class="btn btn-default"><a href="${cp }/board/update?boardNo=${boardVO.boardNo}">수정</a>
-							</button>
-<!-- 						</form> -->
-						
-						<button name="delBtn" type="button" class="btn btn-default"><a href="${cp }/board/delete?boardNo=${boardVO.boardNo}&&cboardNo=${boardVO.CBoardNo}">삭제</a>
-						</button>
-<%-- 						<form action="${cp }/BoardInsertPa?boardNo=${boardVO.boardNo}" method="GET" enctype="multipart/form-data" > --%>
-							<button name="ureBtnpBtn" type="submit" class="btn btn-default"><a href="${cp }/board/paRegist?boardNo=${boardVO.boardNo}">답글</a>
-							</button>
+						<a href="${cp }/board/update?boardNo=${boardVO.boardNo}">
+							<button name="upBtn" type="submit" class="btn btn-default">수정</button>
+						</a>
+						<a href="${cp }/board/delete?boardNo=${boardVO.boardNo}&&cboardNo=${boardVO.CBoardNo}">
+						<button name="delBtn" type="button" class="btn btn-default">삭제</button>
+						</a>
+						<a href="${cp }/board/paRegist?cboardNo=${boardVO.CBoardNo}&&boardNo=${boardVO.boardNo}">
+							<button name="ureBtnpBtn" type="submit" class="btn btn-default">답글</button>
+						</a>
 <!-- 						</form> -->
 					</div>
 				</div>
@@ -101,10 +101,10 @@ $(function(){
 						<c:if test="${replyList.replyDelCheck != '1'}">
 							<div class="delDiv">
 								<label>${replyList.replyContent }</label>
+								<a href="${cp}/reply/delete?boardNo=${boardVO.boardNo}&&replyNo=${replyList.replyNo}">
+									<button type="button" type="submit" class="delB">삭제</button>
+								</a>
 								<hr>
-								<button type="button" type="submit" class="delB">
-									<a href="${cp}/reply/delete?boardNo=${boardVO.boardNo}&&replyNo=${replyList.replyNo}">삭제</a>
-								</button>
 							</div>
 						</c:if>
 					</c:forEach>

@@ -40,7 +40,7 @@
 			<div class="row">
 				<div class="col-sm-8 blog-main">
 					<div class="blog-post">
-						<h2 class="blog-post-title">🐳🐳RING 보드으🎨</h2>
+						<h2 class="blog-post-title">🐳🐳SRING 보드으🎨</h2>
 						<p class="blog-post-meta">
 							2017.10.30, room 201
 						</p>
