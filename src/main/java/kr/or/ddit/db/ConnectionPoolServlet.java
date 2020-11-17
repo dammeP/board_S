@@ -4,7 +4,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 
-import org.apache.tomcat.dbcp.dbcp.BasicDataSource;
+import org.apache.commons.dbcp2.BasicDataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,8 +22,8 @@ private static final Logger logger = LoggerFactory.getLogger(ConnectionPoolServl
 		BasicDataSource bd = new BasicDataSource();
 		bd.setDriverClassName("oracle.jdbc.driver.OracleDriver");
 		bd.setUrl("jdbc:oracle:thin:@localhost:1521/xe");
-		bd.setUsername("dam");
-		bd.setPassword("java");
+		bd.setUsername("boarduser");
+		bd.setPassword("boarduser");
 		bd.setInitialSize(20);
 		
 		ServletContext sc = getServletContext();

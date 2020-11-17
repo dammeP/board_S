@@ -7,6 +7,10 @@
 	<typeAliases>
 		<typeAlias type="kr.or.ddit.board.vo.UsersVO" alias="UsersVO"/>
 		<typeAlias type="kr.or.ddit.board.vo.CBoardVO" alias="CBoardVO"/>
+		<typeAlias type="kr.or.ddit.board.vo.BoardVO" alias="BoardVO"/>
+		<typeAlias type="kr.or.ddit.board.vo.PageVO" alias="PageVO"/>
+		<typeAlias type="kr.or.ddit.board.vo.FilesVO" alias="FilesVO"/>
+		<typeAlias type="kr.or.ddit.reply.vo.ReplyVO" alias="ReplyVO"/>
 	</typeAliases>
 
   <environments default="development">
@@ -14,14 +18,17 @@
       <transactionManager type="JDBC"/>
       <dataSource type="POOLED">
         <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
-        <property name="url" value="jdbc:oracle:thin:@localhost:1521/dmt"/>
-        <property name="username" value="bouser"/>
-        <property name="password" value="bouser"/>
+        <property name="url" value="jdbc:oracle:thin:@localhost:1521/xe"/>
+        <property name="username" value="boarduser"/>
+        <property name="password" value="boarduser"/>
       </dataSource>
     </environment>
   </environments>
   <mappers>
     <mapper resource="kr/or/ddit/config/db/mapper/Users.xml"/>
     <mapper resource="kr/or/ddit/config/db/mapper/CBoard.xml"/>
+    <mapper resource="kr/or/ddit/config/db/mapper/Board.xml"/>
+    <mapper resource="kr/or/ddit/config/db/mapper/Files.xml"/>
+    <mapper resource="kr/or/ddit/config/db/mapper/Reply.xml"/>
   </mappers>
 </configuration>

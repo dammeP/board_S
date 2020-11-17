@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import kr.or.ddit.board.vo.UsersVO;
 import kr.or.ddit.member.model.MemberVO;
 
 public class SessionCheckInterceptor extends HandlerInterceptorAdapter{
@@ -16,12 +17,13 @@ public class SessionCheckInterceptor extends HandlerInterceptorAdapter{
 		
 		// 사용자가 정상적으로 접속 했는지 체크
 		// LoginController 컨트롤러를 통해 정상적으로 접속 했을 경우
-		// SESSION에 S_MEMBER 속성이 존재해야함
+		// SESSION에 USERS 속성이 존재해야함
 		HttpSession session = request.getSession();
 		MemberVO memberVO = (MemberVO)session.getAttribute("S_MEMBER");
+		UsersVO usersVO = (UsersVO)session.getAttribute("USERS");
 		
 		// 로그인 페이지로 이동
-		if(memberVO == null) {
+		if(usersVO == null) {
 			response.sendRedirect("/login/view");
 			return false;
 		}

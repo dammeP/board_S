@@ -33,14 +33,14 @@
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 				<div class="blog-header">
-					<h1 class="blog-title">Main</h1>
-					<p class="lead blog-description">Jsp / Spring.</p>
+					<h1 class="blog-title">SPRING</h1>
+					<p class="lead blog-description">MIG</p>
 				</div>
 
 			<div class="row">
 				<div class="col-sm-8 blog-main">
 					<div class="blog-post">
-						<h2 class="blog-post-title">JSP</h2>
+						<h2 class="blog-post-title">🐳🐳RING 보드으🎨</h2>
 						<p class="blog-post-meta">
 							2017.10.30, room 201
 						</p>

@@ -35,15 +35,15 @@ public class LoginController {
 	}
 	
 	@RequestMapping("/process")
-	public String main(@RequestParam("userid")String userId, @RequestParam("pass")String pass, 
+	public String main(@RequestParam("userId")String userId, @RequestParam("pass")String pass, 
 						UsersVO usersVO, CBoardVO cboardVO, Model model,HttpSession session) {
 		
 		usersVO = boardService.getUsers(userId);
 		List<CBoardVO> cboardList = boardService.selectAllCBoard();
 		
 		if(usersVO != null && usersVO.getPass().equals(pass)) {
-			session.setAttribute("usersVO", usersVO);
-			session.setAttribute("cboardList", cboardList);
+			session.setAttribute("S_usersVO", usersVO);
+			session.setAttribute("S_cboardList", cboardList);
 			model.addAttribute("cboardList",cboardList);
 			return "tiles/main/main";
 			

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="reply">
+
+  <insert id="insertReply" parameterType="ReplyVO">
+  	INSERT INTO Reply
+  	(replyNo, replyContent, replyDate, replyDelCheck, userId, boardNo)
+  	VALUES (reply_seq.nextVal, #{replyContent}, SYSDATE, '', #{userId} , #{boardNo})
+  </insert>
+  
+  <select id="selectAllReply" parameterType="String" resultType="ReplyVO">
+  	SELECT * 
+  	  FROM Reply
+  	 WHERE boardNo = #{boardNo} 
+  	 ORDER BY replyDate DESC
+  </select>
+  
+   <update id="updateReply" parameterType="String">
+  	UPDATE Reply SET replyDelCheck = '1' WHERE replyNo = #{replyNo}
+  </update>
+  
+ 
+</mapper>

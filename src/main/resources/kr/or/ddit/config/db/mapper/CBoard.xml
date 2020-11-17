@@ -20,10 +20,10 @@
   	VALUES (#{cboardUseCheck}, #{cboardCategory},cboard_seq.nextVal,#{userId, jdbcType=VARCHAR})
   </insert>
   
-<!--   <update id="updateCBoard" parameterType="CBoardVO"> -->
-<!--   	UPDATE CBoard -->
-<!--   	SET cboardUseCheck = #{cboardUseCheck} -->
-<!--   	WHERE cboardCategory = #{cboardCategory} -->
-<!--   </update> -->
+  <update id="updateCBoard" parameterType="CBoardVO">
+  	UPDATE CBoard
+  	SET cboardUseCheck = #{cboardUseCheck}
+  	WHERE cboardCategory = #{cboardCategory}
+  </update>
   
 </mapper>

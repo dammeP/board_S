@@ -15,7 +15,6 @@ td {
 							<form id="frm" action="${cp }/cboard/insert" method="POST">
 								<table class="table table-striped">
 									<tr>
-										<input type="hidden" id="userId" name="userId"value=${S_USERS.userId }>
 										<td>게시판이름</td>
 										<td><input type="text" id="cboardCategory"
 											name="cboardCategory"></td>
@@ -34,9 +33,8 @@ td {
 						<div class="table-responsive">
 							<table class="table table-striped">
 								<c:forEach items="${cboardList }" var="cboardList">
-									<form id="frm" action="${cp }/CBoardUpdate" method="POST">
+									<form id="frm" action="${cp }/cboard/update" method="POST">
 									<tr>
-										<input type="hidden" id="userId" name="userId" value=${S_USERS.userId }/>
 										<td>게시판이름</td>
 										<td><input type="text" id="cboardCategory"
 											name="cboardCategory" value="${cboardList.cboardCategory }"></td>
@@ -45,7 +43,7 @@ td {
 													<option value="0">사용</option>
 													<option value="1">미사용</option>
 												</c:if>
-												<c:if test="${cBoardList.cboardUseCheck == '1' }">
+												<c:if test="${cboardList.cboardUseCheck == '1' }">
 													<option value="1">미사용</option>
 													<option value="0">사용</option>
 												</c:if>

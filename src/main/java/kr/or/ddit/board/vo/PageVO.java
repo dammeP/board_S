@@ -7,13 +7,14 @@ public class PageVO {
 	
 	
 	//s,o,r,h
+	public PageVO() {
+	}
 	
 	@Override
 	public String toString() {
 		return "PageVO [page=" + page + ", pageSize=" + pageSize + ", cboardNo=" + cboardNo + "]";
 	}
 	public PageVO(int page, int pageSize, String cboardNo) {
-		super();
 		this.page = page;
 		this.pageSize = pageSize;
 		this.cboardNo = cboardNo;

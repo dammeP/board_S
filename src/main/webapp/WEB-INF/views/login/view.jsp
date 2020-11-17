@@ -105,7 +105,7 @@
         <label for="inputEmail" class="sr-only">
 <%--         <spring:message code="login.userid"/> --%>
         </label>
-        <input type="email" id="inputEmail" name="userid" class="form-control" placeholder="Email address" required autofocus value="brown">
+        <input type="email" id="inputEmail" name="userId" class="form-control" placeholder="Email address" required autofocus value="brown">
         <label for="inputPassword"  class="sr-only">
 <%--         <spring:message code="login.password"/> --%>
         </label>

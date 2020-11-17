@@ -7,9 +7,9 @@
 
 <ul class="nav nav-sidebar">
 	<li class="active"><a href="${pageContext.request.contextPath }/cboard/insert">게시판생성</a></li>
-	<c:forEach items="${cboardList }" var="cboardList">
-		<c:if test="${cboardList.cboardUseCheck == '0' }">
-			<li class="active" id="category"><a href="${pageContext.request.contextPath }/board/category?cboardNo=${cboardList.cboardNo}">${cboardList.cboardCategory }</a></li>
+	<c:forEach items="${S_cboardList }" var="S_cboardList">
+		<c:if test="${S_cboardList.cboardUseCheck == '0' }">
+			<li class="active" id="category"><a href="${pageContext.request.contextPath }/board/category?cboardNo=${S_cboardList.cboardNo}">${S_cboardList.cboardCategory }</a></li>
 		</c:if> 
 	</c:forEach>
 </ul>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+
+  <select id="selectPageBoard" parameterType="PageVO" resultType="BoardVO">
+	SELECT B.*
+	FROM    (SELECT ROWNUM AS rn,boardNo, LPAD('ㄴ',(level -1)*4)||boardTitle as boardTitle, userId, boardDate ,level,boardUseCheck
+	    		FROM (SELECT * 
+	            		FROM board 
+	            		WHERE cboardNo = #{cboardNo})
+	    		START WITH paBoardNo IS NULL
+	    		CONNECT BY PRIOR boardNo = paBoardNo 
+	   		 	ORDER SIBLINGS BY boardDate DESC) B
+		WHERE rn BETWEEN (#{page}-1) * #{pageSize} +1 AND #{page} * #{pageSize}	 		    	
+  </select>
+  
+  <select id="selectTotalCntBoard" parameterType="String" resultType = "int">
+   SELECT COUNT(*)
+     FROM Board
+    WHERE cboardNo=#{cboardNo}
+  </select>
+  
+  <select id="getBoard" parameterType="String" resultType="BoardVO">
+  	SELECT *
+  	  FROM Board
+  	 WHERE boardNo = #{boardNo} 
+  	 ORDER BY boardDate DESC
+  </select>
+  
+  <insert id="insertBoard" parameterType="BoardVO">
+  	INSERT INTO Board
+  	(boardNo, boardTitle, boardContent, boardDate, CBoardNo, userId)
+  	<selectKey keyProperty="boardNo" resultType="String">
+  		select board_seq.currval from dual
+  	</selectKey>
+  	VALUES (board_seq.nextVal, #{boardTitle}, #{boardContent}, SYSDATE, #{CBoardNo}, #{userId})
+  </insert>
+  
+  <delete id="deleteBoard" parameterType="String">
+  	UPDATE Board SET boardUseCheck = '1' WHERE boardNo = #{boardNo} 
+  </delete>
+  
+  <update id="updateBoard" parameterType="BoardVO">
+  	UPDATE Board
+  	  SET boardTitle = #{boardTitle}, boardContent = #{boardContent} 
+  	  WHERE boardNo = #{boardNo}
+  </update>
+  
+  <insert id="insertBoardPa" parameterType="BoardVO">
+  	INSERT INTO Board
+  	(boardNo, boardTitle, boardContent, boardDate, CBoardNo, userId,paBoardNo)
+  	<selectKey keyProperty="boardNo" resultType="String">
+  		select board_seq.currval from dual
+  	</selectKey>
+  	VALUES (board_seq.nextVal, #{boardTitle}, #{boardContent}, SYSDATE, #{CBoardNo}, #{userId},#{paBoardNo})
+  	
+  </insert>
+  
+</mapper>
